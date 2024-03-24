@@ -36,7 +36,7 @@
 ### Relogin to your server to take effect from usermod !!!
 
 ## Second Step 
-- **Clone this repo to your server, navigate to goerli-rpc folder and spin up all docker containers**
+- **Clone this repo to your server, navigate to arbitrum-rpc folder and spin up all docker containers**
     ```
     git clone https://github.com/andrii1890/arbitrum-rpc.git
     cd arbitrum-rpc
