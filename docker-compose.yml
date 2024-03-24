@@ -2,6 +2,8 @@
 #https://github.com/andrii1890
 #Find me at Discord: st_Game and Telegram: @Andrii1890
 
+#Version "1.0"
+
 services:
     one-nitro-node:
         network_mode: host
