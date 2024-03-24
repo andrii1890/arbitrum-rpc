@@ -17,8 +17,8 @@ services:
             - '0.0.0.0:8648:8648'
         command:
         - --init.url=https://snapshot.arbitrum.foundation/arb1/nitro-archive.tar
-        - --parent-chain.connection.url=http://eth.acloud.pp.ua:8545
-        - --parent-chain.blob-client.beacon-url=http://eth.acloud.pp.ua:8545
+        - --parent-chain.connection.url=<Your L1 eth provider>
+        - --parent-chain.blob-client.beacon-url=<Your L1 eth provider>
         - --chain.id=42161
         - --http.api=net,web3,eth,debug
         - --http.corsdomain=*
@@ -47,7 +47,7 @@ services:
             - '0.0.0.0:8547:8547'
             - '0.0.0.0:8548:8548'
         command:
-        - --l1.url=http://eth.acloud.pp.ua:8545
+        - --l1.url=<Your L1 eth provider>
         - --node.chain-id=42161
         - --l2.disable-upstream
         - --node.cache.allow-slow-lookup
