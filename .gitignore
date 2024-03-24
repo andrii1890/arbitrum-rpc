@@ -1,6 +1,6 @@
 .env
 keystore-*
 .DS_Store
-data/
+snapdata/
 arb1/
 db/
