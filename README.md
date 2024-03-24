@@ -9,7 +9,7 @@
  
 ## Following parameters:
 - 16-CPU
-- 32-GBRAM
+- 32-GB RAM
 - 16Tb-NVMe SSD
 
 ## First Step
