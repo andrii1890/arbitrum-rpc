@@ -19,7 +19,7 @@
     ```
 - **Install dependencies**
      ```
-     sudo apt install curl build-essential git wget jq make gcc tmux -y
+     sudo apt install curl build-essential git wget jq make gcc nano htop tmux -y
      ```
 - **Install docker and docker compose**
     ```
