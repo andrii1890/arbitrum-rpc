@@ -44,7 +44,10 @@
   **!!!Cange your L1 eth provider in docker-compose.yml**
 
     ```
-    nano docker compose up -d
+    nano docker-compose.yml
+    ```
+    ```
+    docker compose up -d
     ```
 
 ## Third step
