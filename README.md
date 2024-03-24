@@ -55,7 +55,7 @@
     ```
     echo "#Arbitrum Node Logs" >> $HOME/.profile
     echo 'alias classic_log="docker logs arbitrum-arb-node-1 -f"' >> $HOME/.profile
-    echo 'alias arbitrum_log="docker logs goerli-rpc-lighthouse-1 -f"' >> $HOME/.profile
+    echo 'alias arbitrum_log="docker logs arbitrum-rpc-one-nitro-node-1 -f"' >> $HOME/.profile
     echo 'alias all_log="cd /home/.arbitrum/ && docker compose logs -f"' >> $HOME/.profile
     source $HOME/.profile
     ```
