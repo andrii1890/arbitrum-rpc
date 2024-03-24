@@ -1,4 +1,4 @@
-# Arbitrum rpc node on mainnet
+# Arbitrum Archive Node + Arbitrum Classic Node on mainnet
  ***HTTP*** request will be available on: ***http://<YOUR_IP>:8647***
  
   ***WS*** request will be available on: ***ws://<YOUR_IP>:8648***
