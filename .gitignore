@@ -1,6 +1,6 @@
 .env
 keystore-*
 .DS_Store
+jwtsecret
 snapdata/
-arb1/
-db/
+.arbitrum/
