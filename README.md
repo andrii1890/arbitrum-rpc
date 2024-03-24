@@ -7,10 +7,30 @@
  RECOMMENDATION:
  ***configure please your firewall rules (block all income to port 8547,8548,8647,8648 and use whitelist to access to your rpc, more about that can be found:   https://github.com/chaifeng/ufw-docker)***
  
-## Following parameters:
-- 16-CPU
-- 32-GB RAM
+## Hardware Requirements
+- At least 8 cores, 16 threads
+- 32-GB RAM (64GB of RAM would be perfect)
 - 16Tb-NVMe SSD
+- Internet Connection: A stable, high-speed internet connection and uninterrupted power supply is crucial!
+## Software Requirements
+- Docker: The latest versions of Docker and Docker Compose
+- Latest Docker Image: offchainlabs/nitro-node:v2.3.2-064fa11 can be found: https://hub.docker.com/r/offchainlabs/nitro-node/tags
+- An Ethereum node synced with the mainnet (can be through third-party services)
+- Database snapshot: Here’s the link for Arbitrum: https://snapshot.arbitrum.foundation/index.html
+- Ethereum L1 and L2 configurations: L1 RPC URL and L2 chain id or name
+
+## Setting Up Arbitrum Database Snapshot:
+Let’s start by setting the Arbitrum database snapshot. To access all the snapshots use the link provided before. On the first step of startup, you should utilize the parameter --init.url to initialize the Nitro database. Here’s an example: 
+
+--init.url="https://snapshot.arbitrum.foundation/arb1/nitro-archive.tar"
+
+If you’re setting up multiple nodes, it’s more efficient to download the snapshot image once and host it locally for all your nodes.
+
+For setting more then one Arbitrum node, as well as to run an Arbitrum One Classic node you should use the required parameter: 
+
+--init.url="file:///path/to/snapshot/in/container/snapshot-file.tar due to the presence of classic blocks. However, for running just an Arbitrum One Nitro node this param is optional.
+
+!!! Note that if a database already exists, this setting will be ignored !!!
 
 ## First Step
 - **Update packages**
