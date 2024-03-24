@@ -1,0 +1,61 @@
+#Created by st.Game
+#https://github.com/andrii1890
+#Find me at Discord: st_Game and Telegram: @Andrii1890
+
+services:
+    one-nitro-node:
+        network_mode: host
+        image: 'offchainlabs/nitro-node:v2.3.2-064fa11'
+        user: 1000:1000
+        restart: always
+        stop_grace_period: 30s
+        volumes:
+            - '/home/.arbitrum/:/home/user/.arbitrum'
+            - '/home/$USER/.arbitrum/snapdata/:/arbitrum/snapdata/'
+        ports:
+            - '0.0.0.0:8647:8647'
+            - '0.0.0.0:8648:8648'
+        command:
+        - --init.url=https://snapshot.arbitrum.foundation/arb1/nitro-archive.tar
+        - --parent-chain.connection.url=http://eth.acloud.pp.ua:8545
+        - --parent-chain.blob-client.beacon-url=http://eth.acloud.pp.ua:8545
+        - --chain.id=42161
+        - --http.api=net,web3,eth,debug
+        - --http.corsdomain=*
+        - --http.addr=0.0.0.0
+        - --http.vhosts=*
+        - --ws.port=8648
+        - --ws.addr=0.0.0.0
+        - --ws.origins=*
+        - --node.batch-poster.post-4844-blobs=true
+        - --execution.rpc.classic-redirect=http://0.0.0.0:8547
+        - --execution.caching.archive
+        logging:
+          driver: json-file
+          options:
+            max-size: 50m
+            max-file: "10"
+    arb-node:
+        network_mode: host
+        image: 'offchainlabs/arb-node:v1.4.5-e97c1a4'
+        user: 1000:1000
+        restart: always
+        stop_grace_period: 30s
+        volumes:
+            - '/home/.arbitrum/:/home/user/.arbitrum'
+        ports:
+            - '0.0.0.0:8547:8547'
+            - '0.0.0.0:8548:8548'
+        command:
+        - --l1.url=http://eth.acloud.pp.ua:8545
+        - --node.chain-id=42161
+        - --l2.disable-upstream
+        - --node.cache.allow-slow-lookup
+        - --core.checkpoint-gas-frequency=156250000
+        - --core.lazy-load-core-machine
+        - --node.rpc.tracing.enable
+        logging:
+          driver: json-file
+          options:
+            max-size: 50m
+            max-file: "10"
