@@ -33,7 +33,7 @@ services:
         - --ws.addr=0.0.0.0
         - --ws.origins=*
         - --node.batch-poster.post-4844-blobs=true
-        - --execution.rpc.classic-redirect=http://0.0.0.0:8647
+        - --execution.rpc.classic-redirect=http://<Your IP>:8647
         - --execution.caching.archive
         logging:
           driver: json-file
@@ -48,8 +48,8 @@ services:
         volumes:
             - '/home/$USER/arbitrum-rpc/.arbitrum/:/home/user/.arbitrum'
         ports:
-            - '0.0.0.0:8647:8647'
-            - '0.0.0.0:8648:8648'
+            - '0.0.0.0:8647:8547'
+            - '0.0.0.0:8648:8548'
         command:
         - --l1.url=<Your L1 eth provider>
         - --node.chain-id=42161
