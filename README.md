@@ -1,7 +1,7 @@
 # Arbitrum Archive Node + Arbitrum Classic Node on mainnet
- ***HTTP*** request will be available on: ***http://<YOUR_IP>:8647***
+ ***HTTP*** request will be available on: ***http://<YOUR_IP>:8547***
  
-  ***WS*** request will be available on: ***ws://<YOUR_IP>:8648***
+  ***WS*** request will be available on: ***ws://<YOUR_IP>:8548***
  
 
  RECOMMENDATION:
@@ -74,7 +74,7 @@ For setting more then one Arbitrum node, as well as to run an Arbitrum One Class
 - **Add alias for docker logs**
     ```
     echo "#Arbitrum Node Logs" >> $HOME/.profile
-    echo 'alias classic_log="docker logs arbitrum-arb-node-1 -f"' >> $HOME/.profile
+    echo 'alias classic_log="docker logs arbitrum-rpc-arb-node-1 -f"' >> $HOME/.profile
     echo 'alias arbitrum_log="docker logs arbitrum-rpc-one-nitro-node-1 -f"' >> $HOME/.profile
     echo 'alias all_log="cd /home/.arbitrum/ && docker compose logs -f"' >> $HOME/.profile
     source $HOME/.profile
