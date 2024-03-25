@@ -4,6 +4,9 @@
 
 #Version "1.0"
 
+networks:
+  node:
+
 services:
     one-nitro-node:
         network_mode: host
@@ -38,7 +41,6 @@ services:
             max-size: 50m
             max-file: "10"
     arb-node:
-        network_mode: bridge
         image: 'offchainlabs/arb-node:v1.4.5-e97c1a4'
         user: 1000:1000
         restart: always
@@ -56,6 +58,8 @@ services:
         - --core.checkpoint-gas-frequency=156250000
         - --core.lazy-load-core-machine
         - --node.rpc.tracing.enable
+        networks:
+        - node
         logging:
           driver: json-file
           options:
