@@ -9,7 +9,6 @@ networks:
 
 services:
     one-nitro-node:
-        network_mode: host
         image: 'offchainlabs/nitro-node:v2.3.2-064fa11'
         user: 1000:1000
         restart: always
@@ -35,6 +34,8 @@ services:
         - --node.batch-poster.post-4844-blobs=true
         - --execution.rpc.classic-redirect=http://<Your IP>:8647
         - --execution.caching.archive
+        networks:
+        - node
         logging:
           driver: json-file
           options:
