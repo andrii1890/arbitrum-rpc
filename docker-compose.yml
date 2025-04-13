@@ -24,7 +24,7 @@ services:
         - --parent-chain.connection.url=<Your L1 eth provider EL>
         - --parent-chain.blob-client.beacon-url=<Your L1 eth provider CL>
         - --chain.id=42161
-        - --http.api=net,web3,eth,debug
+        - --http.api=net,web3,eth,debug,txpool,arbdebug,arbtrace
         - --http.corsdomain=*
         - --http.addr=0.0.0.0
         - --http.vhosts=*
@@ -58,7 +58,9 @@ services:
         - --node.cache.allow-slow-lookup
         - --core.checkpoint-gas-frequency=156250000
         - --core.lazy-load-core-machine
+        - --core.checkpoint-pruning-mode=off
         - --node.rpc.tracing.enable
+        - --node.rpc.tracing.namespace=trace
         networks:
         - node
         logging:
